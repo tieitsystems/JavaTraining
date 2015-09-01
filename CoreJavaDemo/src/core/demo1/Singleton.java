@@ -1,6 +1,6 @@
 package core.demo1;
 
-public class Singleton {
+public class Singleton  {
 
 	private static Singleton instance;
 	
