@@ -1,4 +1,4 @@
-package java.io;
+package core.io;
 
 import java.net.*;
 import java.io.*;
