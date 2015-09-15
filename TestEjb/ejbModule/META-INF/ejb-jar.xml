@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_1.xsd"
+	version="3.1">
+	<display-name>TestEjb</display-name>
+
+	<enterprise-beans>
+		<session>
+			<ejb-name>EvaluateCart</ejb-name>
+			<home>ee.ejb.EvaluateCartHome</home>
+			<remote>ee.ejb.EvaluateCartRemoteInterface</remote>
+			<ejb-class>ee.ejb.EvaluateCart</ejb-class>
+			<session-type>Stateful</session-type>
+			<remove-method>
+				<bean-method>
+					<method-name>checkout</method-name>
+				</bean-method>
+			</remove-method>
+			<transaction-type>Container</transaction-type>
+		</session>
+	</enterprise-beans>
+</ejb-jar>
+
+<!--
+<enterprise-beans>                       //beginning of the EJB descriptor
+ <entity> or <session>                   //define EJB type: entity or session
+  <description> </description>           //text display description
+  <ejb-name> </ejb-name>                 //logical name for the bean
+  <home> </home>                         //home interface name
+  <remote> </remote>                     //remote interface name
+  <ejb-class> </ejb-class>               //bean class name
+  <session-type> </session-type>         //For session beans: Stateful always
+  <persistence-type> </persistence-type> //For entity beans: container or
+                                         //bean-managed?
+  <prim-key-class> </prim-key-class>     //For entity beans: primary key class
+  <reentrant> </reentrant>               //Reentrant boolean: True or False
+  <cmp-field> </cmp-field>               //Container-managed
+                                         //fields for entity beans
+  <primkey-field> </prim-key-field>       //For entity beans: primary key field
+  <transaction-type> </transaction-type> //transaction information for bean
+  <env-entry> </env-entry>               //bean environment definition
+  <ejb-ref> </ejb-ref>                   //EJB environment definition
+  <security-role-ref> </security-role-ref>  //security role for bean
+  <resource-ref> </resource-ref>         //resource environment 
+ </session> or </entity>
+</enterprise-beans>
+--!>
